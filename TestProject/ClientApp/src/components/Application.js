@@ -1,4 +1,4 @@
-﻿import React from 'react'
+import React from 'react';
 
 class User extends React.Component {
     constructor(props) {
@@ -79,7 +79,7 @@ class UserForm extends React.Component {
     onRegistrationDateChange(key, value) {
         var newUsers = this.state.users;
         newUsers[key - 1].RegistrationDate = value;
-        this.setState({users: newUsers});
+        this.setState({ users: newUsers });
     }
 
     onLastActivityDateChange(key, value) {
@@ -93,8 +93,7 @@ class UserForm extends React.Component {
 
         console.log(this.state.users);
 
-        if (this.state.users)
-        {
+        if (this.state.users) {
             fetch('/api/Users', {
                 method: 'POST',
                 headers: {
@@ -164,7 +163,7 @@ class Diagram extends React.Component {
     }
 }
 
-class App extends React.Component {
+export class Application extends React.Component {
     constructor(props) {
         super(props);
     }
@@ -176,8 +175,3 @@ class App extends React.Component {
         </React.Fragment>
     }
 }
-
-ReactDOM.render(
-    <App />,
-    document.getElementById("app")
-);
